@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Lib Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .story {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Mad Lib Story</h1>
+    <div class="story" id="storyOutput"></div>
+    
+    <script>
+        // CHANGE THESE variables to make them your own
+        const adjective = "rusted";
+        const noun = "potato";
+        const verb = "attacked";
+        const place = "Costco";
+        const animal = "Rabid Dog";
+        const number = 67;
+        const color = "orange";
+        const personName = "Greg";
+        
+        // Create your OWN NEW story using template literals.  Example: 
+        let story = `
+            <p>One time, ${personName} went to ${place} and saw a 
+            ${color} ${animal}.</p>
+            
+            <p>The ${color} ${animal} ${verb} over to a ${adjective} ${noun} and 
+            counted to ${number}.</p>
+            
+            <p>It was very ${adjective}!</p>
+
+            <p>However, there was one final ${adjective} thing ${personName} had to do at ${place}...</p>
+
+            <p>He had to find and destroy all ${number} ${noun} before it was too late. Before he too, became ${adjective}.</p>
+
+            <p>And ${color}. Yes, ${personName} would become ${color}.
+        `;
+        
+        // Display the story
+        document.getElementById('storyOutput').innerHTML = story;
+        
+        // Also log to console
+        console.log("Story:", story);
+    </script>
+</body>
+</html>
