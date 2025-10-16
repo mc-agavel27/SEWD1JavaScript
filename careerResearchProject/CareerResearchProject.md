@@ -1,8 +1,8 @@
 # Tech Careers Research Project
 
-**Team Members:**
+**Team Members:** Adam Gavel
 
-**Date:** 
+**Date:** 10/16/2025
 
 **Submission Guidelines:** Your team can work on this together but you all have to get a copy of it and push it to your GitHub repo, main folder/repo htmlCssJavaScript, in a subfolder you will call **"careerResearchProject"**.  This will be just a copy and filled out version of this markdown file.  You're just filling in the questions with your own added text. 
 
