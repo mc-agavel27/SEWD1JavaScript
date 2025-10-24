@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+            padding: 20px;
+        }
+        
+        #profile {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        #profile h2 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        
+        #profile p {
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div id="profile">
+        <h2 id="name"></h2>
+        <p id="job"></p>
+        <p id="location"></p>
+        <p id="bio"></p>
+    </div>
+    
+    <script>
+        // Create profile data variables
+        let personName = "Sarah Johnson";
+        let jobTitle = "Web Developer";
+        let personLocation = "San Francisco, CA";
+        let personBio = "Passionate about creating beautiful and functional websites. Love learning new technologies!";
+        
+        // Select elements
+        let nameElement = document.getElementById('name');
+        let jobElement = document.getElementById('job');
+        let locationElement = document.getElementById('location');
+        let bioElement = document.getElementById('bio');
+        
+        // Populate the profile card
+        // Add the rest of the content here...
+
+        nameElement.textContent = personName;
+        jobElement.textContent = jobTitle;
+        locationElement.textContent = personLocation;
+        bioElement.textContent = personBio;
+        
+        // Bonus: Add some extra styling
+        nameElement.style.textAlign = 'center';
+        // Try adding more styles...
+        nameElement.style.color = 'orange';
+        jobElement.style.fontStyle = 'italic';
+
+        let profileDiv = document.getElementById('profile');
+        profileDiv.style.textAlign = 'center';
+        profileDiv.style.border = '2px solid black';
+        
+        
+        console.log('Profile card created!');
+    </script>
+</body>
+</html>
