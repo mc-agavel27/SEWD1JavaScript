@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #e3f2fd;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #2196f3;
+            border-radius: 5px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 30px;
+            font-size: 18px;
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #1976d2;
+        }
+        #greeting {
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #2196f3;
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Greeting Generator</h1>
+        <p>Enter your name:</p>
+        
+        <input type="text" id="nameInput" placeholder="Your name here">
+        <button id="greetBtn">Greet Me!</button>
+        
+        <div id="greeting"></div>
+    </div>
+    
+    <script>
+        // Select elements
+        let nameInput = document.getElementById('nameInput');
+        let greetBtn = document.getElementById('greetBtn');
+        let greeting = document.getElementById('greeting');
+        
+        // Add click event to button
+        greetBtn.addEventListener('click', function() {
+            // Get the value from the input
+            let name = nameInput.value;
+            
+            // Display the greeting
+            greeting.textContent = `Hello, ${name}!`;
+            
+            // Change the greeting color
+            greeting.style.color = '#4caf50';
+            
+            // Bonus: Clear the input field
+             nameInput.value = '';
+        });
+    </script>
+</body>
+</html>

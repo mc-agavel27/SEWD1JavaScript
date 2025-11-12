@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Like Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f0f0;
+        }
+        .post {
+            background-color: white;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        #likeBtn {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: white;
+            border: 2px solid #e91e63;
+            color: #e91e63;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #likeBtn:hover:not(:disabled) {
+            background-color: #e91e63;
+            color: white;
+        }
+        #likeBtn:disabled {
+            background-color: #e91e63;
+            color: white;
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        #likeCount {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <h2>Check out this awesome post!</h2>
+        <p>Click the button below to show your appreciation!</p>
+        
+        <button id="likeBtn">♡ Like</button>
+        
+        <p id="likeCount">0 likes</p>
+    </div>
+    
+    <script>
+        // Initialize like counter
+        let likes = 0;
+        
+        // Select elements
+        let likeBtn = document.getElementById('likeBtn');
+        let likeCount = document.getElementById('likeCount');
+        
+        // Add click event
+        likeBtn.addEventListener('click', function() {
+            // Increment likes
+            likes++;
+            
+            // Update the count display
+            likeCount.textContent = `${likes} likes`;
+            
+            // Change button text to show it's liked
+            likeBtn.textContent = '❤️ Liked';
+            
+            // Disable the button so they can't like again
+            likeBtn.disabled = true;
+            
+            console.log('Post liked! Total likes:', likes);
+        });
+    </script>
+</body>
+</html>

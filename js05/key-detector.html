@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        #keyDisplay {
+            background-color: white;
+            color: #333;
+            font-size: 120px;
+            font-weight: bold;
+            padding: 60px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 400px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        #info {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #counter {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Keyboard Detector</h1>
+    <p>Press any key on your keyboard!</p>
+    
+    <div id="keyDisplay">?</div>
+    
+    <p id="info">Waiting for keypress...</p>
+    <p id="counter">Keys pressed: 0</p>
+    
+    <script>
+        // Select elements
+        let keyDisplay = document.getElementById('keyDisplay');
+        let info = document.getElementById('info');
+        let counter = document.getElementById('counter');
+        
+        // Initialize counter
+        let keysPressed = 0;
+        
+        // Listen for keypress events on the entire document
+        document.addEventListener('keypress', function(event) {
+            // Get the key that was pressed
+            let key = event.key;
+            
+            // Display the key in large text
+            keyDisplay.textContent = key;
+            
+            // Update the info text
+            info.textContent = `You pressed: "${key}"`;
+            
+            // Increment and display counter
+            keysPressed++;
+            counter.textContent = `Keys pressed: ${keysPressed}`;
+            
+            // Log to console
+            console.log('Key pressed:', key);
+        });
+    </script>
+</body>
+</html>

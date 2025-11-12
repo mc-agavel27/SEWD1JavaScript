@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            min-height: 100vh;
+        }
+        .converter {
+            background-color: white;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        input {
+            width: 200px;
+            padding: 15px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        #toCelsius {
+            background-color: #2196f3;
+        }
+        #toFahrenheit {
+            background-color: #f44336;
+        }
+        #result {
+            margin-top: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>🌡️ Temperature Converter</h1>
+        <p>Enter a temperature:</p>
+        
+        <input type="number" id="tempInput" placeholder="0">
+        
+        <div>
+            <button id="toFahrenheit">Convert to °F</button>
+            <button id="toCelsius">Convert to °C</button>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        // Select elements
+        let tempInput = document.getElementById('tempInput');
+        let toFahrenheitBtn = document.getElementById('toFahrenheit');
+        let toCelsiusBtn = document.getElementById('toCelsius');
+        let result = document.getElementById('result');
+        
+        // Convert Celsius to Fahrenheit
+        toFahrenheitBtn.addEventListener('click', function() {
+            // Get the Celsius value
+            let celsius = Number(tempInput.value);
+            
+            // Convert: F = (C × 9/5) + 32
+            let fahrenheit = (celsius * 9/5) + 32;
+            
+            // Round to 1 decimal place
+            fahrenheit = fahrenheit.toFixed(1);
+            
+            // Display result
+            result.textContent = `${celsius}°C = ${fahrenheit}°F`;
+            
+            console.log(`${celsius}°C = ${fahrenheit}°F`);
+        });
+        
+        // Convert Fahrenheit to Celsius
+        toCelsiusBtn.addEventListener('click', function() {
+            // Get the Fahrenheit value
+            let fahrenheit = Number(tempInput.value);
+            
+            // Convert: C = (F - 32) × 5/9
+            // Add your calculation here...
+            celsius = (fahrenheit - 32) * 5/9;
+            
+            // Round to 1 decimal place
+            // Add your code here...
+            celsius = celsius.toFixed(1);
+            
+            // Display result
+            result.textContent = ` ${fahrenheit}°F = ${celsius}°C `;
+            // Add your code here...
+        });
+    </script>
+</body>
+</html>

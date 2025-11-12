@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hover Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #hoverBox {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #status {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover Over the Box</h1>
+    
+    <div id="hoverBox">
+        Hover over me!
+    </div>
+    
+    <p id="status">Waiting for hover...</p>
+    
+    <script>
+        // Select elements
+        let hoverBox = document.getElementById('hoverBox');
+        let status = document.getElementById('status');
+        
+        // When mouse enters the box
+        hoverBox.addEventListener('mouseenter', function() {
+            hoverBox.style.backgroundColor = 'yellow';
+            status.textContent = 'Mouse is inside!';
+        });
+        
+        // When mouse leaves the box
+        hoverBox.addEventListener('mouseleave', function() {
+            // Change background back to lightblue
+            hoverBox.style.backgroundColor = "lightBlue";
+            // Change status text to "Mouse left!"
+            status.textContent = "Mouse Left!";
+            // Your code here...
+        });
+    </script>
+</body>
+</html>

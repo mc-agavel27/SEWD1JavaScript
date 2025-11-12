@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        .quiz-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .question {
+            font-size: 20px;
+            margin: 30px 0;
+            color: #34495e;
+        }
+        .option {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .option:hover {
+            background-color: #d5dbdb;
+            transform: translateX(5px);
+        }
+        #feedback {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        #score {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>🎯 Quick Quiz</h1>
+        
+        <div class="question">
+            What does HTML stand for?
+        </div>
+        
+        <div class="option" id="option1">
+            Hyper Text Markup Language
+        </div>
+        <div class="option" id="option2">
+            Hot Mail Language
+        </div>
+        <div class="option" id="option3">
+            How To Make Lasagna
+        </div>
+        
+        <div id="feedback"></div>
+        
+        <div id="score">Score: 0</div>
+    </div>
+    
+    <script>
+        // Initialize score
+        let score = 0;
+        
+        // Select elements
+        let option1 = document.getElementById('option1');
+        let option2 = document.getElementById('option2');
+        let option3 = document.getElementById('option3');
+        let feedback = document.getElementById('feedback');
+        let scoreDisplay = document.getElementById('score');
+        
+        // Option 1 - CORRECT ANSWER
+        option1.addEventListener('click', function() {
+            // Show correct feedback
+            feedback.textContent = '✅ Correct! Well done!';
+            feedback.className = 'correct';
+            feedback.style.display = 'block';
+            
+            // Increase score
+            score++;
+            scoreDisplay.textContent = `Score: ${score}`;
+        });
+        
+        // Option 2 - WRONG ANSWER
+        option2.addEventListener('click', function() {
+            feedback.textContent = '❌ Wrong! The correct answer is Hyper Text Markup Language.';
+            feedback.className = 'incorrect';
+            feedback.style.display = 'block';
+        });
+        
+        // Option 3 - WRONG ANSWER
+        // Add your event listener here...
+        option3.addEventListener('click', function() {
+            feedback.textContent = '❌ Wrong! The correct answer is Hyper Text Markup Language.';
+            feedback.className = 'incorrect';
+            feedback.style.display = 'block';
+        });
+        // Use the same pattern as option2
+    </script>
+</body>
+</html>

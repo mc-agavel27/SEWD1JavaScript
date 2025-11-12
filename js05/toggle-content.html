@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle Content</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #content {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Toggle Content Demo</h1>
+    
+    <button id="toggleBtn">Show/Hide</button>
+    
+    <div id="content">
+        <h2>Hidden Content</h2>
+        <p>This is some content that can be shown or hidden.</p>
+        <p>Click the button above to toggle this content!</p>
+        <p>Pretty cool, right?</p>
+    </div>
+    
+    <script>
+        // Select elements
+        let toggleBtn = document.getElementById('toggleBtn');
+        let content = document.getElementById('content');
+        
+        // Add click event to toggle button
+        toggleBtn.addEventListener('click', function() {
+            // Toggle the 'hidden' class on the content
+            content.classList.toggle('hidden');
+            
+            // This will add the class if it's not there
+            // Or remove it if it is there
+        });
+    </script>
+</body>
+</html>
